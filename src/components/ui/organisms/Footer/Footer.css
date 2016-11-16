@@ -1,0 +1,12 @@
+@import '../../../variables.css';
+
+.root {
+  background-color: var(--hybrid-background);
+  color: var(--hybrid-lt-wht);
+}
+
+.container {
+  margin: 0 auto;
+  padding: calc(var(--space) * 2);
+  text-align: center;
+}
