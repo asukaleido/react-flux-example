@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
-  res.send(template({ assets, title: 'react with flux examples' }));
+  res.send(template({ assets, title: 'React with Flux Examples' }));
 });
 
 /* eslint-disable no-console */
