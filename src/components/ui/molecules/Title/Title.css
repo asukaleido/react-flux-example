@@ -1,0 +1,14 @@
+@import '../../../variables.css';
+
+.root {
+  background-color: var(--hybrid-dk-blk);
+  color: var(--hybrid-lt-blu);
+  font-size: 48px;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--max-content-width);
+  padding: calc(var(--space) * 2);
+}
