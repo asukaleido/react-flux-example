@@ -6,12 +6,38 @@
 }
 
 .container {
+  height: 50px;
+  line-height: 50px;
   margin: 0 auto;
   max-width: var(--max-content-width);
-  padding: calc(var(--space) * 2);
-  text-align: right;
 }
 
 .link + .link {
+  margin-left: calc(var(--space) * 2);
+}
+
+.link.home {
+  color: var(--hybrid-lt-blu);
+  display: inline-block;
+  font-size: 24px;
+  width: 100px;
+}
+
+.nav-list {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 100px);
+}
+
+.nav {
+  display: inline-flex;
+  float: right;
+}
+
+ul.nav > li {
+  display: inline;
+}
+
+ul.nav > li + li {
   margin-left: calc(var(--space) * 2);
 }
