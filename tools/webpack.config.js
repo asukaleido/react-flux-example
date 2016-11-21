@@ -85,7 +85,7 @@ const config = {
   postcss(bundler) {
     return [
       require('postcss-import')({ addDependencyTo: bundler }),
-      require('postcss-cssnext')(),
+      require('postcss-cssnext')({ browsers: ['last 2 versions'] }),
     ];
   },
 };
