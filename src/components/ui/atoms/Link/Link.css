@@ -1,0 +1,6 @@
+@import '../../../variables.css';
+
+.container:any-link {
+  color: inherit;
+  text-decoration: none;
+}

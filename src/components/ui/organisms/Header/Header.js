@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from '../../atoms';
 import s from './Header.css';
 
 export default function Header() {
