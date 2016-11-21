@@ -1,7 +1,6 @@
 @import '../variables.css';
 
-html,
-body {
+html {
   box-sizing: border-box;
   color: var(--hybrid-lt-wht);
   font-family: var(--font-family);
