@@ -4,8 +4,12 @@ html {
   box-sizing: border-box;
   color: var(--hybrid-lt-wht);
   font-family: var(--font-family);
-  font-size: var(--font-size);
+  font-size: var(--font-default-persent);
   line-height: var(--line-height);
+}
+
+body {
+  font-size: var(--font-size);
 }
 
 blockquote,
