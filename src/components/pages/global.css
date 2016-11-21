@@ -8,10 +8,6 @@ html {
   line-height: var(--line-height);
 }
 
-body {
-  font-size: var(--font-size);
-}
-
 blockquote,
 dd,
 dl,
