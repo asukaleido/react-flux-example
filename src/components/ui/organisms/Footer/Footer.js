@@ -1,11 +1,12 @@
 import React from 'react';
+import { Text } from '../../atoms';
 import s from './Footer.css';
 
 export default function Footer() {
   return (
     <footer className={s.root}>
       <div className={s.container}>
-        <span className={s.text}>© asukaleido</span>
+        <Text>© asukaleido</Text>
       </div>
     </footer>
   );
