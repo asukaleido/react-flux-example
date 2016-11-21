@@ -1,23 +1,16 @@
-import classNames from 'classnames';
 import React from 'react';
-import { Link } from '../../atoms';
 import s from './Header.css';
+import { Link } from '../../atoms';
+import { Navigation } from '../../molecules';
 
 export default function Header() {
   return (
     <header className={s.root}>
       <div className={s.container}>
-        <Link className={classNames(s.link, s.home)} to="/">React</Link>
-        <div className={s['nav-list']}>
-          <ul className={s.nav}>
-            <li>
-              <Link className={s.link} to="/">Home</Link>
-            </li>
-            <li>
-              <Link className={s.link} to="/about">About</Link>
-            </li>
-          </ul>
+        <div className={s.home}>
+          <Link to="/">React</Link>
         </div>
+        <Navigation className={s.nav} />
       </div>
     </header>
   );

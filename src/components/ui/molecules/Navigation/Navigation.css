@@ -1,0 +1,25 @@
+@import '../../../variables.css';
+
+.root {
+  /* root */
+}
+
+.container {
+  /* container */
+}
+
+.list {
+  display: inline-flex;
+}
+
+.list.right {
+  float: right;
+}
+
+.list > li {
+  display: inline;
+}
+
+.list > li + li {
+  margin-left: calc(var(--space) * 2);
+}
