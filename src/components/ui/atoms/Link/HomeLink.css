@@ -1,0 +1,7 @@
+@import '../../../variables.css';
+@import './Link.css';
+
+.container:any-link {
+  color: var(--hybrid-lt-blu);
+  font-size: calc(var(--font-size) * 1.5);
+}
