@@ -6,7 +6,7 @@ export default (
   <Router history={browserHistory}>
     <Route component={App} path="/">
       <IndexRoute component={Home} />
-      <Route component={About} path="about" />
+      <Route component={About} onEnter={About.load} path="about" />
     </Route>
   </Router>
 );
