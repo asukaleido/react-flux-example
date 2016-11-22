@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer, Header } from '../ui/organisms';
-import './global.css';
+import './index.css';
 
 export default function Index({ children }) {
   return (
