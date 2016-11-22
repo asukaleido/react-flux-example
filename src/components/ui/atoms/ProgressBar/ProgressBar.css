@@ -1,0 +1,23 @@
+@import '../../../variables.css';
+
+:root {
+  --delay: 0.4s;
+}
+
+.container {
+  transition: opacity var(--delay) linear var(--delay);
+  opacity: 0;
+  width: 100%;
+}
+
+.container.is-loading {
+  opacity: 1;
+  transition: none;
+}
+
+.bar {
+  background-color: var(--hybrid-dk-blu);
+  box-shadow: 0 0 10px var(--hybrid-lt-wht);
+  height: 2px;
+  transition: width var(--delay) ease 0s;
+}

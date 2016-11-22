@@ -1,15 +1,35 @@
 import React from 'react';
+import { PageStore } from '../../stores';
+import { ProgressBar } from '../ui/atoms';
 import { Footer, Header } from '../ui/organisms';
-import './index.css';
+import s from './index.css';
 
-export default function Index({ children }) {
-  return (
-    <div>
-      <Header />
-      {children}
-      <Footer />
-    </div>
-  );
+export default class Index extends React.Component {
+
+  static propTypes = {
+    children: React.PropTypes.element,
+  };
+
+  state = {
+    loadingProgress: { percent: 0 },
+  };
+
+  componentWillMount() {
+    PageStore.loadingProgress.subscribe(({ percent }) => {
+      this.setState({ loadingProgress: { percent } });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <ProgressBar className={s['progress-bar']} percent={this.state.loadingProgress.percent} />
+        <Header />
+        {this.props.children}
+        <Footer />
+      </div>
+    );
+  }
 }
 
 Index.propTypes = {
