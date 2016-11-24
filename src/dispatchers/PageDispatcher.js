@@ -25,12 +25,6 @@ function subscribe(page, observables) {
 }
 
 waitForLoading.subscribe(async ({ complete, observables, page, params, replace }) => {
-  switch (page.name) {
-    case Page.AboutPage.name:
-      await subscribe(Page.AboutPage, observables);
-      readyToDisplay.next({ complete, page, params, replace });
-      break;
-    default:
-      break;
-  }
+  await subscribe(Page.AboutPage, observables);
+  readyToDisplay.next({ complete, page, params, replace });
 });
