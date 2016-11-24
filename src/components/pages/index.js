@@ -36,5 +36,5 @@ Index.propTypes = {
   children: React.PropTypes.element,
 };
 
-export * from './About';
-export * from './Home';
+export * from './AboutPage';
+export * from './HomePage';

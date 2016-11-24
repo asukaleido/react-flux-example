@@ -2,28 +2,28 @@ import React from 'react';
 import { Heading } from '../../ui/atoms';
 import { AboutAction, PageAction } from '../../../actions';
 import { AboutStore, PageStore } from '../../../stores';
-import s from './About.css';
+import s from './AboutPage.css';
 
-export default function About() {
+export default function AboutPage() {
   return (
     <main className={s.root}>
       <div className={s.container}>
-        <Heading>About</Heading>
+        <Heading>AboutPage</Heading>
       </div>
     </main>
   );
 }
 
 PageStore.readyToDisplay
-  .filter(({ page }) => page === About)
+  .filter(({ page }) => page === AboutPage)
   .subscribe(({ complete }) => {
     complete();
   });
 
-About.load = function load(params, replace, callback) {
+AboutPage.load = function load(params, replace, callback) {
   const props = { callback, params, replace };
   const observables = ['title', 'descripiton', 'items'].map(key => AboutStore[key]);
-  PageAction.waitForLoading(About, observables, props);
+  PageAction.waitForLoading(AboutPage, observables, props);
   AboutAction.fetchTitle();
   AboutAction.fetchDescription();
   AboutAction.fetchItems();
