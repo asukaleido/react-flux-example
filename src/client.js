@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import 'normalize.css';
 import ReactDOM from 'react-dom';
+import './vendor';
 
 const container = document.getElementById('app');
 

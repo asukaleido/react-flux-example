@@ -1,30 +1,20 @@
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/take';
-import * as Page from '../components/pages';
+import { Observable, Subject } from 'rxjs';
 
 export const waitForLoading = new Subject();
 export const readyToDisplay = new Subject();
 export const loadingProgress = new Subject();
 
-function getPercent(rate, total) {
-  return Math.ceil((rate / total) * 100);
-}
-
-function subscribe(page, observables) {
-  const total = observables.length;
-  let rate = 0;
-  loadingProgress.next({ page, percent: getPercent(rate, total) });
-  const promises = observables
-    .map(observable => new Promise(resolve => observable.take(1).subscribe(() => {
-      rate += 1;
-      loadingProgress.next({ page, percent: getPercent(rate, total) });
-      resolve();
-    })));
-  return Promise.all(promises);
-}
-
-waitForLoading.subscribe(async ({ complete, observables, page, params, replace }) => {
-  await subscribe(Page.AboutPage, observables);
-  readyToDisplay.next({ complete, page, params, replace });
+waitForLoading.subscribe(({ complete, observables, page, params, replace }) => {
+  Observable
+    .zip(...observables.map(observable => observable.take(1)))
+    .subscribe(() => {
+      readyToDisplay.next({ complete, page, params, replace });
+    });
+  Observable
+    .merge(...observables.map(observable => observable.map(() => 1).take(1)))
+    .scan((x, y) => x + y)
+    .startWith(0)
+    .subscribe(rate => {
+      loadingProgress.next({ page, percent: Math.ceil((rate / observables.length) * 100) });
+    });
 });
