@@ -1,6 +1,4 @@
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/take';
 import * as Page from '../components/pages';
 
 export const waitForLoading = new Subject();

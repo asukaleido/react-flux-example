@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import chai from 'chai';
 import chaiEnzyme from 'chai-enzyme';
+import './vendor';
 import './routes';
 
 chai.use(chaiEnzyme());
